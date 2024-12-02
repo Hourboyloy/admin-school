@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Setbg } from "./components/backgroundStore";
 import axios from "axios";
-import { CreateContext } from "./Helper/Context";
 
 const AuthLayout = () => {
-  const { url } = useContext(CreateContext);
+  const url = "https://api-news-dot-school.vercel.app";
   const [background, setBackground] = useState(null);
 
   useEffect(() => {
     axios
-      .get(`url/background-seted`)
+      .get(`${url}/background-seted`)
       .then((response) => {
         if (
           response.status === 200 &&
