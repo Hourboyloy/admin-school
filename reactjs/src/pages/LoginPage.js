@@ -23,6 +23,29 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
+        if (response.data.user?.role !== "admin") {
+          // Corrected condition
+          setTimeout(() => {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "top",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              background: "#171B24", // Setting the background color
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              },
+            });
+
+            Toast.fire({
+              icon: "warning",
+              title: "You are not authorized to access the admin page",
+            });
+          }, 1000);
+          return;
+        }
         setTimeout(() => {
           // alert("Login successfuly");
           const Toast = Swal.mixin({
