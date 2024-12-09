@@ -231,7 +231,7 @@ const NewsDetail = ({ id, news, handleDelete, handleUpdateVisibility }) => {
           <p className="text-sm text-gray-300 uppercase tracking-widest">
             {news.category}
           </p>
-          <h1 className="lg:text-2xl md:text-xl text-lg font-semibold text-gray-100 mt-2">
+          <h1 className="lg:text-xl md:text-lg text-gray-300 mt-2">
             {news.title}
           </h1>
         </div>
