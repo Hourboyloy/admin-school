@@ -138,8 +138,8 @@ function ListNewsServices({
       </div>
 
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:hidden lg:grid-cols-3 sm:grid-cols-2 gap-4 pt-2">
-        {getCurrentItems()?.length > 0 &&
-          getCurrentItems()?.map((e, i) => (
+        {FecthData?.length > 0 &&
+          FecthData?.map((e, i) => (
             <li key={e._id} className="bg-[#2c343d] rounded overflow-hidden">
               <div>
                 <Link

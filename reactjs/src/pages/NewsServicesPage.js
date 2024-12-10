@@ -172,7 +172,7 @@ const NewsServicesPage = () => {
                 </Link>
               </div>
 
-              <div>
+              <div className=" lg:block hidden">
                 <Pagination
                   totalPages={totalPages}
                   currentPage={currentPage}
