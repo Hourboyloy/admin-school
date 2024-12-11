@@ -9,20 +9,20 @@ const createOrUpdateViews = async (req, res) => {
     const monthNumber = req.body.month || currentDate.getMonth() + 1; // Use current month if not provided (JavaScript months are 0-based)
 
     // Map months from number to name
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+     const months = [
+       "Jan",
+       "Feb",
+       "Mar",
+       "Apr",
+       "May",
+       "June",
+       "July",
+       "Aug",
+       "Sep",
+       "Oct",
+       "Nov",
+       "Dec",
+     ];
 
     const monthName = months[monthNumber - 1]; // Get month name from number
 
@@ -76,18 +76,18 @@ const getTotalViewsForLast12Months = async (req, res) => {
 
       // Convert month index to month name (optional)
       const months = [
-        "January",
-        "February",
-        "March",
-        "April",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
         "May",
         "June",
         "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
       const monthName = months[monthIndex];
 

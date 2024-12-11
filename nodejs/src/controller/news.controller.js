@@ -440,46 +440,6 @@ const increaseViewer = async (req, res) => {
   }
 };
 
-// handle work with commant
-// const addComment = async (req, res) => {
-//   try {
-//     const { newsId } = req.params; // Extract news ID from URL params
-//     const { userId, commentText, username } = req.body; // Extract userId and comment text from the request body
-//     if (!username || !userId || !commentText) {
-//       return;
-//     }
-//     // Find the news item by ID
-//     const news = await newsmodel.findById(newsId);
-//     if (!news) {
-//       return res.status(404).json({ message: "News item not found" });
-//     }
-//     // Add the comment to the comments array in the news document
-//     news.comments.push({
-//       userid: userId,
-//       username: username,
-//       comment: commentText,
-//       createdAt: new Date(),
-//     });
-
-//     // Save the updated news document
-//     await news.save();
-
-//     // Respond with success message
-//     res.status(200).json({
-//       message: "Comment added successfully",
-//       comment: {
-//         userid: userId,
-//         username: username,
-//         comment: commentText,
-//         createdAt: new Date(),
-//       },
-//     });
-//   } catch (error) {
-//     console.error("Error adding comment:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// };
-
 const addComment = async (req, res) => {
   try {
     const { newsId } = req.params; // Extract news ID from URL params
@@ -582,60 +542,6 @@ const replyToComment = async (req, res) => {
       .json({ message: "Internal server error", error: error.message });
   }
 };
-
-
-// const replyToComment = async (req, res) => {
-//   try {
-//     const newsId = req.params.newsId; // ID of the news item
-//     const commentId = req.params.commentId; // ID of the comment to reply to
-//     const { userId, replyText, username, replyToUsername } = req.body; // User replying and the reply text
-//     // Validate the userId
-//     if (!mongoose.Types.ObjectId.isValid(userId)) {
-//       return res.status(400).json({ message: "Invalid user ID" });
-//     }
-
-//     if (!username || !userId || !newsId) {
-//       return;
-//     }
-
-//     // Validate the reply text
-//     if (!replyText || replyText.trim() === "") {
-//       return res.status(400).json({ message: "Reply text cannot be empty" });
-//     }
-
-//     // Find the news item by ID
-//     const news = await newsmodel.findById(newsId);
-//     if (!news) {
-//       return res.status(404).json({ message: "News item not found" });
-//     }
-
-//     // Find the comment within the news item
-//     const comment = news.comments.id(commentId);
-//     if (!comment) {
-//       return res.status(404).json({ message: "Comment not found" });
-//     }
-
-//     // Add the reply to the comment
-//     comment.replies.push({
-//       userid: userId,
-//       username: username,
-//       replyToUsername: replyToUsername ? replyToUsername : "",
-//       comment: replyText,
-//       createdAt: new Date(),
-//     });
-
-//     // Save the updated news document
-//     await news.save();
-
-//     res.status(200).json({
-//       message: "Reply added successfully",
-//       comment: comment, // Return the updated comment with the new reply
-//     });
-//   } catch (error) {
-//     console.error("Error replying to comment:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// };
 
 const likeOrDislikeComment = async (req, res) => {
   try {
