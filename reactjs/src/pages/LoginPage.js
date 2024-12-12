@@ -41,7 +41,7 @@ const LoginPage = () => {
 
             Toast.fire({
               icon: "warning",
-              title: "You are not authorized to access the admin page",
+              title: "You are not admin",
             });
           }, 1000);
           return;
