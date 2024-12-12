@@ -7,8 +7,8 @@ export const CreateContext = createContext();
 // Create a provider component
 export const ContextProvider = ({ children }) => {
   // state
-  const url = 'http://localhost:5051';
-  // const url = "https://api-news-dot-school.vercel.app";
+  // const url = 'http://localhost:5051';
+  const url = "https://api-news-dot-school.vercel.app";
   const [categories, setCategories] = useState([]);
   const [listNews, setListNews] = useState([]);
   const [dataTotalViewsAnalysis, setDataTotalViewsAnalysis] = useState([]);
